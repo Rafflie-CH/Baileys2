@@ -57,17 +57,17 @@ To run the example script, download or clone the repo and then type the followin
 
 Use the stable version:
 ```
-yarn add @Rafflie-CH/Baileys
+yarn add @Rafflie-CH/Baileys2
 ```
 
 Use the edge version (no guarantee of stability, but latest fixes + features)
 ```
-yarn add github:Rafflie-CH/Baileys
+yarn add github:Rafflie-CH/Baileys2
 ```
 
 Then import your code using:
 ```ts 
-import makeWASocket from '@Rafflie-CH/Baileys'
+import makeWASocket from '@Rafflie-CH/Baileys2'
 ```
 
 # Links
@@ -227,7 +227,7 @@ WhatsApp provides a multi-device API that allows Baileys to be authenticated as 
 > You can customize browser name if you connect with **QR-CODE**, with `Browser` constant, we have some browsers config, **see [here](https://baileys.whiskeysockets.io/types/BrowsersMap.html)**
 
 ```ts
-import makeWASocket from '@Rafflie-CH/Baileys'
+import makeWASocket from '@Rafflie-CH/Baileys2'
 
 const Rafz = makeWASocket({
     // can provide additional config here
@@ -247,7 +247,7 @@ If the connection is successful, you will see a QR code printed on your terminal
 The phone number can't have `+` or `()` or `-`, only numbers, you must provide country code
 
 ```ts
-import makeWASocket from '@Rafflie-CH/Baileys'
+import makeWASocket from '@Rafflie-CH/Baileys2'
 
 const Rafz = makeWASocket({
     // can provide additional config here
@@ -320,7 +320,7 @@ You obviously don't want to keep scanning the QR code every time you want to con
 
 So, you can load the credentials to log back in:
 ```ts
-import makeWASocket, { useMultiFileAuthState } from '@Rafflie-CH/Baileys'
+import makeWASocket, { useMultiFileAuthState } from '@Rafflie-CH/Baileys2'
 
 const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys')
 
@@ -360,7 +360,7 @@ Rafz.ev.on('messages.upsert', ({ messages }) => {
 > This example includes basic auth storage too
 
 ```ts
-import makeWASocket, { DisconnectReason, useMultiFileAuthState } from '@Rafflie-CH/Baileys'
+import makeWASocket, { DisconnectReason, useMultiFileAuthState } from '@Rafflie-CH/Baileys2'
 import { Boom } from '@hapi/boom'
 
 async function connectToWhatsApp () {
@@ -407,7 +407,7 @@ connectToWhatsApp()
 - By default poll votes are encrypted and handled in `messages.update`
 ```ts
 import pino from "pino"
-import { makeInMemoryStore, getAggregateVotesInPollMessage } from '@Rafflie-CH/Baileys'
+import { makeInMemoryStore, getAggregateVotesInPollMessage } from '@Rafflie-CH/Baileys2'
 
 const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@Rafzhost" })
 logger.level = "fatal"
@@ -445,7 +445,7 @@ Rafz.ev.on("messages.update", async (chatUpdate) => {
 
 - By default event response are encrypted and handled in `messages.update`
 ```ts
-import { jidNormalizedUser, getAggregateResponsesInEventMessage } from '@Rafflie-CH/Baileys'
+import { jidNormalizedUser, getAggregateResponsesInEventMessage } from '@Rafflie-CH/Baileys'2
 
 Rafz.ev.on("messages.update", async ([chatUpdate]) => {
     const eventResponses = chatUpdate.update?.eventResponses
@@ -469,7 +469,7 @@ Rafz.ev.on("messages.update", async ([chatUpdate]) => {
 It can be used as follows:
 
 ```ts
-import makeWASocket, { makeInMemoryStore } from '@Rafflie-CH/Baileys'
+import makeWASocket, { makeInMemoryStore } from '@Rafflie-CH/Baileys2'
 // the store maintains the data of the WA connection in memory
 // can be written out to a file & read from it
 const store = makeInMemoryStore({ })
